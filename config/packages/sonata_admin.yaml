@@ -1,0 +1,36 @@
+sonata_admin:
+    title: 'Sonata Admin'
+    dashboard:
+        blocks:
+            - { type: sonata.admin.block.admin_list, position: left }
+        groups:
+            place:
+                label: Places
+                icon: 'fas fa-map'
+                items:
+                    - 'app.admin.place'
+            theme:
+                label: Themes
+                icon: 'fas fa-users'
+                items:
+                    - 'app.admin.theme'
+            price:
+                label: Prices
+                icon: 'fas fa-wallet'
+                items:
+                    - 'app.admin.price'
+            user:
+                label: Users
+                icon: 'fas fa-users'
+                items:
+                    - 'app.admin.user'
+            configuration:
+                label: Configuration
+                icon: 'fas fa-list'
+                items:
+                    - 'sonata.user.admin.user'
+
+sonata_block:
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]

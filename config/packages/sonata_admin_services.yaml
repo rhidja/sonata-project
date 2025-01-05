@@ -1,0 +1,29 @@
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    app.admin.place:
+        class: App\Admin\PlaceAdmin
+        public: true
+        tags:
+            - { name: 'sonata.admin', model_class: 'App\Entity\Place', manager_type: orm, label: "Places" }
+
+    app.admin.theme:
+        class: App\Admin\ThemeAdmin
+        public: true
+        tags:
+            - { name: 'sonata.admin', model_class: 'App\Entity\Theme', manager_type: orm, label: "Themes" }
+
+    app.admin.price:
+        class: App\Admin\PriceAdmin
+        public: true
+        tags:
+            - { name: 'sonata.admin', model_class: 'App\Entity\Price', manager_type: orm, label: "Prices" }
+
+    app.admin.user:
+        class: App\Admin\UserAdmin
+        public: true
+        tags:
+            - { name: 'sonata.admin', model_class: 'App\Entity\User', manager_type: orm, label: "Users" }
